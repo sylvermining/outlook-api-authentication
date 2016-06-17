@@ -5,7 +5,7 @@ import java.util.Map;
 
 public enum ApplicationsEnum {
 
-	BRAINY_AUTH_CLIENT("brainy.auth.client.pk", "App de pruebas","http://authclientserver.com:8080/authclient/welcome.jsp?id=");
+	BRAINY_AUTH_CLIENT("brainy.auth.client.pk", "App de pruebas","https://localhost:9090/sessioninfo?oid=");
 
 	private String codigo;
 	private String redirectURL;
