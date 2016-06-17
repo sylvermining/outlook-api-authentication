@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Microservice/Microservice.iml" filepath="$PROJECT_DIR$/Microservice/Microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/office365auth/office365auth.iml" filepath="$PROJECT_DIR$/office365auth/office365auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/office365authWeb/office365authWeb.iml" filepath="$PROJECT_DIR$/office365authWeb/office365authWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springmongo/springmongo.iml" filepath="$PROJECT_DIR$/springmongo/springmongo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xinef.iml" filepath="$PROJECT_DIR$/xinef.iml" />
     </modules>
   </component>
 </project>

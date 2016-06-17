@@ -31,7 +31,7 @@
     <bytecodeTargetLevel>
       <module name="Microservice" target="1.6" />
       <module name="office365auth" target="1.5" />
-      <module name="office365authWeb" target="1.7" />
+      <module name="office365authWeb" target="1.8" />
       <module name="springmongo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
