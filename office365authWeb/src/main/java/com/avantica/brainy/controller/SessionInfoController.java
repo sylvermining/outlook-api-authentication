@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by max.macalupu on 31/05/2016.
  */
 @RestController
-public class HelloController {
+public class SessionInfoController {
 
     private String message = "Hello World";
 
