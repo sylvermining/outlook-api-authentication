@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-	@RequestMapping(value = "/autenticate", method = RequestMethod.POST)
-	public String autenticate(@RequestParam(value="access_token", required=false) String access_token,
-							  @RequestParam(value="scope", required=false) String scope) {
-		BodyToken tokenInfo = DecodeUtil.decodeToken(access_token);
-		SessionContext.nuevo(tokenInfo);
-		return "redirect:" +ApplicationsEnum.BRAINY_AUTH_CLIENT.getRedirectURL()+tokenInfo.getOid();
-	}
+    @RequestMapping(value = "/autenticate", method = RequestMethod.POST)
+    public String authenticate(@RequestParam(value = "access_token", required = false) String access_token,
+                               @RequestParam(value = "scope", required = false) String scope) {
+        BodyToken tokenInfo = DecodeUtil.decodeToken(access_token);
+        SessionContext.nuevo(tokenInfo);
+        return "redirect:" + ApplicationsEnum.BRAINY_AUTH_CLIENT.getRedirectURL() + tokenInfo.getOid();
+    }
 }

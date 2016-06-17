@@ -12,30 +12,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.security.PermitAll;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 @PermitAll
 @Controller
-public class RedirectAuth{
+public class RedirectAuth {
 
-	@RequestMapping(value = "/redirectAuth", method = RequestMethod.GET)
-	public String firstAuthRedirec(HttpServletRequest request, HttpServletResponse response,
-								   @RequestParam(value = "appID") String appID) {
+    @RequestMapping(value = "/redirectAuth", method = RequestMethod.GET)
+    public String firstAuthRedirect(HttpServletRequest request, @RequestParam(value = "appID") String appID) {
 
-		String sessionID = request.getSession().getId();
-		RequestInfo info = FactoryUtiles.buildRequestInfo(sessionID,appID);
-		RequestSessionContext.nuevo(info);
-		return "redirect:" +generateCompleteURL(info);
-	}
+        String sessionID = request.getSession().getId();
+        RequestInfo info = FactoryUtiles.buildRequestInfo(sessionID, appID);
+        RequestSessionContext.nuevo(info);
+        return "redirect:" + generateCompleteURL(info);
+    }
 
-	private String generateCompleteURL(RequestInfo info){
-		return  QueryString.withDomain(ParametersEnum.TOKEN_LOGIN.getCodigo())
-				.andParameter(ParametersEnum.CLIEND_ID)
-				.andParameter(ParametersEnum.REDIRECT)
-				.andParameter(ParametersEnum.AUTHORIZ)
-				.andParameter(ParametersEnum.SCOPE)
-				.andParameter(ParametersEnum.RESPONSE_TYPE_TOKEN)
-				.andParameter(ParametersEnum.RESPONSE_MODE)
-				.giveMeURL();
-	}
+    private String generateCompleteURL(RequestInfo info) {
+        return QueryString.withDomain(ParametersEnum.TOKEN_LOGIN.getCodigo())
+                .andParameter(ParametersEnum.CLIEND_ID)
+                .andParameter(ParametersEnum.REDIRECT)
+                .andParameter(ParametersEnum.AUTHORIZ)
+                .andParameter(ParametersEnum.SCOPE)
+                .andParameter(ParametersEnum.RESPONSE_TYPE_TOKEN)
+                .andParameter(ParametersEnum.RESPONSE_MODE)
+                .giveMeURL();
+    }
 }
