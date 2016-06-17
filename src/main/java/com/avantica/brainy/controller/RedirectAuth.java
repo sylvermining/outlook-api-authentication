@@ -23,10 +23,10 @@ public class RedirectAuth {
         String sessionID = request.getSession().getId();
         RequestInfo info = FactoryUtiles.buildRequestInfo(sessionID, appID);
         RequestSessionContext.nuevo(info);
-        return "redirect:" + generateCompleteURL(info);
+        return "redirect:" + generateCompleteURL();
     }
 
-    private String generateCompleteURL(RequestInfo info) {
+    private String generateCompleteURL() {
         return QueryString.withDomain(ParametersEnum.TOKEN_LOGIN.getCodigo())
                 .andParameter(ParametersEnum.CLIEND_ID)
                 .andParameter(ParametersEnum.REDIRECT)

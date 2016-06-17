@@ -7,9 +7,6 @@ import java.util.HashMap;
 
 public class SessionContext extends HashMap<String, BodyToken>{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private static SessionContext sessionContext;
 	

@@ -7,9 +7,6 @@ import java.util.HashMap;
 
 public class RequestSessionContext extends HashMap<String, RequestInfo>{
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
 	private static RequestSessionContext sessionContext;
 
@@ -27,8 +24,5 @@ public class RequestSessionContext extends HashMap<String, RequestInfo>{
 	public synchronized static void nuevo(RequestInfo info){
 		getInstance().put(info.getSessionId(), info);
 	}
-	
-	public static RequestInfo getSession(String key){
-		return getInstance().get(key);
-	}
+
 }
