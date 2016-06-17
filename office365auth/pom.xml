@@ -61,16 +61,4 @@
 
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <name>Maven Repository Artifact</name>
-            <layout>default</layout>
-            <url>http://mvnrepository.com/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
 </project>
