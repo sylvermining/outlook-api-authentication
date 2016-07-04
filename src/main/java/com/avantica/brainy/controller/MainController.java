@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class MainController {
@@ -18,5 +19,13 @@ public class MainController {
         BodyToken tokenInfo = DecodeUtil.decodeToken(access_token);
         SessionContext.nuevo(tokenInfo);
         return "redirect:" + ApplicationsEnum.BRAINY_AUTH_CLIENT.getRedirectURL() + tokenInfo.getOid();
+    }
+
+
+    @RequestMapping(value = "/autenticate", method = RequestMethod.GET)
+    public String tokenAuthenticate(@RequestParam(value = "code", required = false) String access_token,
+                               @RequestParam(value = "scope", required = false) String state) {
+
+        return "redirect:" + ApplicationsEnum.BRAINY_AUTH_CLIENT.getRedirectURL();
     }
 }

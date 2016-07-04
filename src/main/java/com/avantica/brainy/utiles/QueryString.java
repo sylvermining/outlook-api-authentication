@@ -1,5 +1,6 @@
 package com.avantica.brainy.utiles;
 
+import com.avantica.brainy.enums.AuthorizeParametersEnum;
 import com.avantica.brainy.model.ParametersEnum;
 
 import java.util.HashMap;
@@ -28,6 +29,16 @@ public class QueryString {
 		parameters.put(outLookPameter.getCodigo(), outLookPameter.getDescripcion());
 		return this;
 	}
+
+    public QueryString andParameter(AuthorizeParametersEnum authorizeParametersEnum){
+        parameters.put(authorizeParametersEnum.getParameterCode(), authorizeParametersEnum.getParameterValue());
+        return this;
+    }
+
+    public QueryString andParameter(String code, String value){
+        parameters.put(code, value);
+        return this;
+    }
 
 	public QueryString andParameterValue(ParametersEnum outLookPameter, String value){
 		parameters.put(value, outLookPameter.getDescripcion());

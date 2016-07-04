@@ -5,39 +5,44 @@ import java.util.Map;
 
 public enum ApplicationsEnum {
 
-	BRAINY_AUTH_CLIENT("brainy.auth.client.pk", "App de pruebas","https://localhost:9090/sessioninfo?oid=");
+	BRAINY_AUTH_CLIENT("brainy.auth.client.pk", "App de pruebas","https://localhost:9090/sessioninfo?oid="),
+    BRAINY_WEB_APP_CLIENT("brainy.web.app.client.pk", "Web App for testing","https://localhost:9090/somepath?oid=");
 
-	private String codigo;
+	private String code;
 	private String redirectURL;
-	private String descripcion;
+	private String description;
 
-	ApplicationsEnum(final String codigo, final String descripcion, final String redirectURL) {
-		this.codigo = codigo;
-		this.descripcion = descripcion;
+	ApplicationsEnum(final String code, final String description, final String redirectURL) {
+		this.code = code;
+		this.description = description;
 		this.redirectURL = redirectURL;
 	}
 
-
 	private static Map<String,ApplicationsEnum> mapWithData = new HashMap<>();
+
 	static {
 		for(ApplicationsEnum param: ApplicationsEnum.values()){
-			mapWithData.put(param.codigo,param);
+			mapWithData.put(param.code,param);
 		}
 	}
 
-	public String getCodigo() {
-		return codigo;
+	public String getCode() {
+		return code;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getDescription() {
+		return description;
 	}
 
 	public String getRedirectURL() {
 		return redirectURL;
 	}
 
-	public static  ApplicationsEnum findByCode(String codigo){
-		return mapWithData.get(codigo);
+	public static  ApplicationsEnum findByCode(String code){
+		return mapWithData.get(code);
 	}
+
+    public static boolean containsKey(String key) {
+        return mapWithData.containsKey(key);
+    }
 }
